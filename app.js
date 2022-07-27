@@ -6,17 +6,23 @@ const mongoose = require('mongoose');
 const Viaje = require('./models/viaje');
 const port = process.env.PORT || 3000;
 
-mongoose.connect('mongodb://localhost:27017/aviacorp').
-  catch(error => handleError(error));
+let db_url;
+
+if(process.env.MODE_ENV === "local") {
+    db_url = process.env.LOCAL_URL;
+    console.log(db_url);
+} else {
+    db_url = process.env.WEB_URL;
+    console.log(db_url);
+}
+
+mongoose.connect(db_url);
 
 const db = mongoose.connection;
-db.on('error', err => {
-    logError(err);
-  });
-
-db.once('open', ()=> {
-    console.log('Database connected');
-})
+db.on("error", console.error.bind(console, "connection error:"));
+db.once("open", () => {
+    console.log("Database connected");
+});
 
 app.set('view engine', 'ejs');
 app.set('vews', path.join(__dirname, 'views'));

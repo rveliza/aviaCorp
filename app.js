@@ -31,10 +31,9 @@ app.get('/', (req, res) => {
     res.render('home');
 });
 
-app.get('/crearviaje', async (req, res) =>{
-    const viaje = new Viaje({aeronave: 'Jet', empresa: 'Seplacosa', solicitante: "RCDM"});
-    await viaje.save();
-    res.send(viaje);
+app.get('/viajes', async(req, res) => {
+    const viajes = await Viaje.find({});
+    res.render('viajes/index', { viajes });
 });
 
 app.listen(port, () => {

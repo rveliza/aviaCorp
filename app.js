@@ -36,6 +36,12 @@ app.get('/viajes', async(req, res) => {
     res.render('viajes/index', { viajes });
 });
 
+app.get('/viajes/:id', async(req, res) => {
+    const { id } = req.params;
+    const viaje = await Viaje.findById(id);
+    res.render('viajes/show', { viaje });
+});
+
 app.listen(port, () => {
     console.log(`http://localhost:${port}`);
 });

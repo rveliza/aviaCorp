@@ -7,11 +7,14 @@
     <title>Aviacorp Programación</title>
 </head>
 <body>
-    <h1>Programación de Vuelos</h1>
+    <h1>Detalles del viaje</h1>
     <ul>
-        <% for( let viaje of viajes) { %>
-            <li><%= viaje.aeronave %> - <%= viaje.empresa %> - <a href="/viajes/<%= viaje._id %>"><%= viaje.destino %></a>
-            </li>
+        <li>Salida: <%= viaje.salida %></li>
+        <li>Regreso: <%= viaje.regreso %></li>
+        <li>Pasajeros: <%= viaje.pasajeros %></li>
+        <% let notas = viaje.notas %> 
+        <% if (notas) { %>
+        <li>Notas: <%= viaje.notas %></li>
         <% } %>
     </ul>
 </body>

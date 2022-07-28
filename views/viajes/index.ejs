@@ -8,6 +8,9 @@
 </head>
 <body>
     <h1>Programación de Vuelos</h1>
+    <div>
+        <a href="/viajes/nuevo">Agregar Viaje</a>
+    </div>
     <ul>
         <% for( let viaje of viajes) { %>
             <li><%= viaje.aeronave %> - <%= viaje.empresa %> - <a href="/viajes/<%= viaje._id %>"><%= viaje.destino %></a>

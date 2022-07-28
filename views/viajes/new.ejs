@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aviacorp Programación</title>
+</head>
+<body>
+    <h1>Nuevo Viaje</h1>
+    <form action="/viajes" method="POST">
+        <div>
+            <label for="aeronave">Aeronave:</label>
+            <input type="text" id="aeronave" name="viaje[aeronave]">
+        </div>
+        <div>
+            <label for="empresa">Empresa:</label>
+            <input type="text" id="empresa" name="viaje[empresa]">
+        </div>
+        <div>
+            <label for="solicitante">Solicitante:</label>
+            <input type="text" id="solicitante" name="viaje[solicitante]">
+        </div>
+        <div>
+            <label for="f_solicitud">Fecha de solicitud:</label>
+            <input type="date" id="f_solicitud" name="viaje[f_solicitud]">
+        </div>
+        <div>
+            <label for="salida">Salida:</label>
+            <input type="date" id="salida" name="viaje[salida]">
+        </div>
+        <div>
+            <label for="regreso">Regreso:</label>
+            <input type="date" id="regreso" name="viaje[regreso]">
+        </div>
+        <div>
+            <label for="destino">Destino:</label>
+            <input type="text" id="destino" name="viaje[destino]">
+        </div>
+        <div>
+            <label for="pasajeros">Pasajeros:</label>
+            <textarea name="viaje[pasajeros]" id="pasajeros" cols="30" rows="5"></textarea>
+        </div>
+        <div>
+            <label for="notas">Notas:</label>
+            <textarea name="viaje[notas]" id="notas" cols="30" rows="3"></textarea>
+        </div>
+        <button>Agregar Viaje</button>
+        <a href="/viajes">Programación de Vuelos</a>
+
+    </form>
+</body>
+</html>
